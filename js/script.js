@@ -192,6 +192,9 @@ let autoPlay = true;
 let audioActive = false;
 let previousSongs = [];
 
+let test1 = previousSongs[previousSongs.length - 2];
+let previousSong = songsHipHop[test1];
+
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 const topTenList = [];
@@ -209,15 +212,21 @@ loadAudio(); // Load a random song
 
 function loadAudio() {
     let randomSong = Math.floor(Math.random() * songsHipHop.length);
+    let song = songsHipHop[randomSong];
     previousSongs.push(randomSong);
-    console.log(previousSongs);
-    for (i = 0; i < songsHipHop.length; i++) {
-        let song = songsHipHop[randomSong];
-    
-        audioImg.src = `/img/covers/${song.img}`;
-        audioTitle.textContent = song.title;
-        audioArtist.textContent = song.artist;
-        audioFile.src = song.audio;
+
+    if (previousSongs[previousSongs.length - 1] == previousSongs[previousSongs.length - 2] || previousSongs[previousSongs.length - 1] == previousSongs[previousSongs.length - 3]){
+        loadAudio();
+        return;
+    } else {
+        for (i = 0; i < songsHipHop.length; i++) {
+
+        
+            audioImg.src = `/img/covers/${song.img}`;
+            audioTitle.textContent = song.title;
+            audioArtist.textContent = song.artist;
+            audioFile.src = song.audio;
+        }
     }
 }
 
@@ -276,14 +285,13 @@ function handleAudioEnd() {
 function handleNextSong(){
     loadAudio();
     handleAudioEnd();
+    handlePlayAudio();
 }
 
 function handlePreviousSong(){
     if (previousSongs.length == 1) {
         return;
     } else {
-        let test1 = previousSongs[previousSongs.length - 2];
-        let previousSong = songsHipHop[test1];
 
         audioImg.src = `/img/covers/${previousSong.img}`;
         audioTitle.textContent = previousSong.title;
@@ -291,6 +299,8 @@ function handlePreviousSong(){
         audioFile.src = previousSong.audio;
 
         previousSongs.pop(0);
+        handleAudioEnd();
+        handlePlayAudio();
     }
 }
 
