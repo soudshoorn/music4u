@@ -172,13 +172,7 @@ const songsHipHop = [
     // }
 ];
 
-// 
-//
-// VARIABLES
-//
-//
-
-// Audio Player Variables
+// Audio player Variables
 const audioSection = document.querySelector('#audio');
 const audioFigureImg = document.querySelector('.audio__cover');
 const audioImg = document.querySelector('.audio__cover--img');
@@ -197,19 +191,14 @@ const audioDuration = document.querySelector('.audio__timestamp--fulltime');
 let autoPlay = true;
 let audioActive = false;
 let previousSongs = [];
-let previousSong = songsHipHop[previousSongs[previousSongs.length - 2]];
+
+let test1 = previousSongs[previousSongs.length - 2];
+let previousSong = songsHipHop[test1];
 
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 const topTenList = [];
 
-//
-//
-// Event listeners
-//
-//
-
-// Audio player event listeners
 audioPausePlay.addEventListener('click', handlePlayAudio);
 audioVolumeSlider.addEventListener('change', function(){audioFile.volume = audioVolumeSlider.value / 100;})
 audioTimeStampSlider.addEventListener('change', function(){audioFile.currentTime = audioTimeStampSlider.value;})
@@ -221,9 +210,6 @@ audioNext.addEventListener('click', handleNextSong);
 
 loadAudio(); // Load a random song
 
-//
-// Audio Player
-//
 function loadAudio() {
     let randomSong = Math.floor(Math.random() * songsHipHop.length);
     let song = songsHipHop[randomSong];
@@ -234,6 +220,8 @@ function loadAudio() {
         return;
     } else {
         for (i = 0; i < songsHipHop.length; i++) {
+
+        
             audioImg.src = `../assets/covers/${song.img}`;
             audioTitle.textContent = song.title;
             audioArtist.textContent = song.artist;
@@ -262,6 +250,7 @@ function handlePauseAudio() {
 function handleTimeStamp() {
     let seconds = parseInt(audioFile.currentTime % 60);
     let minute = parseInt((audioFile.currentTime / 60) % 60);
+
     if (seconds < 10) {
         seconds = `0${seconds}`;
     }
@@ -282,7 +271,15 @@ function handleDuration() {
 function handleAudioEnd() {
     audioActive = false;
     audioPausePlay.innerHTML = '<i class="fas fa-play"></i>';
+    // audioFile.pause();
+    
     audioTimeStampSlider.value = 0;
+    // if(autoPlay){
+    //     loadAudio();
+    //     return;
+    // } else {
+    //     return;
+    // }
 }
 
 function handleNextSong(){
@@ -295,6 +292,7 @@ function handlePreviousSong(){
     if (previousSongs.length == 1) {
         return;
     } else {
+
         audioImg.src = `../assets/covers/${previousSong.img}`;
         audioTitle.textContent = previousSong.title;
         audioArtist.textContent = previousSong.artist;
@@ -306,9 +304,7 @@ function handlePreviousSong(){
     }
 }
 
-// 
-// Top Ten Results
-//
+
 function handleTopTen() {
     for (i = 1; i < 11; i++) {
         let randomSongs = Math.floor(Math.random() * songsHipHop.length);

@@ -10,37 +10,45 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <main>
-        <section id="audio">
-            <div class="container">
-                <div class="row">
-                    <figure class="audio__cover">
-                        <img class="audio__cover--img" src="./img/covers/" alt="">
-                    </figure>
-                    <h3 class="audio__title">Title</h3>
-                    <p class="audio__artist">artist</p>
-                    <div class="audio__timestamp">
-                        <div class="audio__timestamp--currenttime">0:00</div>
-                        <input class="audio__timestamp--slider" type="range" value="1" min="1">
-                        <div class="audio__timestamp--fulltime">0:00</div>
-                    </div>
-                    <audio class="audio__file" preload="metadata">
-                        <source src="" type="audio/mpeg">
-                        Your browser does not support our music format.
-                    </audio>
-                    <div class="audio__controller">
-                        <button class="audio__controller--previous btn__controller"><i class="fas fa-step-backward"></i></button>
-                        <button class="audio__controller--pauseplay btn__controller"><i class="fas fa-play"></i></button>
-                        <button class="audio__controller--next btn__controller"><i class="fas fa-step-forward"></i></button>
-                    </div>
-                    <div class="audio__volumecontrol">
-                        <i class="audio__volmecontrol--icon fa fa-volume-down"></i>
-                        <input class="audio__volumecontrol--slider" type="range" min="0" value="100" max="100">
-                        <i class="audio__volmecontrol--icon fa fa-volume-up"></i>
+    <nav>
+        <div class="container">
+            <div class="row-nav">
+                <div class="navbar">
+                    <div class="navbar__logo">
+                        <img class="navbar__logo--img" src="/assets/img/logo.png" alt="">
+                    </div>  
+                    <div class="navbar__items">
+                        <ul class="navbar__list">
+                            <div class="navbar__item">
+                                <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                <li class="navbar__item--list"><a class="navbar__item--link active" href="/">Ontdek</a></li>
+                            </div>
+                            <div class="navbar__item">
+                                <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                <li class="navbar__item--list"><a class="navbar__item--link" href="/">Genres</a></li>
+                            </div>
+                            <div class="navbar__item">
+                                <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                <li class="navbar__item--list"><a class="navbar__item--link" href="/">Artiesten</a></li>
+                            </div>
+                            <div class="navbar__item">
+                                <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                <li class="navbar__item--list"><a class="navbar__item--link" href="/">Radio</a></li>
+                        </ul>
+                        <ul class="navbar__settinglist">
+                            <li class="navbar__item"><a class="navbar__item--link" href="/">Afspeellijst </a></li>
+                            <li class="navbar__item"><a class="navbar__item--link" href="/">Account</a></li>
+                            <li class="navbar__item"><a class="navbar__item--link" href="/">Voorkeuren</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </nav>
+
+
+
+    <main>
         <section id="topten">
             <div class="container">
                 <div class="row">

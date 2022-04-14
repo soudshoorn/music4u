@@ -37,197 +37,91 @@ main {
     justify-content: space-between;
 }
 
-.row {
+
+body {
+    background-color: #1c1d31;
+}
+
+.row-nav {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
+    height: 100%; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    border-right: #333446 2px solid;
+    overflow-x: hidden; 
+    padding-top: 20px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 /*
 
-AUDIO PLAYER
+NAV
 
 */
 
-#audio {
-    margin: 24px;
+nav {
+    background-color: #131217;
 }
 
-.audio__volumecontrol {
-    padding: 8px;
-    background-color: rgba(115, 66, 214, 0.11);
-    border-radius: 30px;
-    width: 165px;
+.navbar__item--icon {
+    margin-right: 24px;
 }
 
-.audio__controller {
+.navbar__item {
     margin-top: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.audio__cover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.audio__cover--img {
-    width: 270px;
-    border-radius: 4px;
-}
-
-.btn__controller {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(115, 66, 214, 0.11);
-    color: #7342d6;
-    text-align: center;
-    margin: 0 4px;
-}
-
-.btn__controller:hover {
-    cursor: pointer;
-    transition: all 300ms ease;
-    background-color: rgba(101, 38, 228, 0.233);
-    color: #7342d6;
-}
-
-.btn__controller:active {
-    transform: translateY(3px);
-}
-
-.audio__title {
-    margin-top: 8px;
     font-size: 24px;
-    text-align: center;
+    line-height: 24px;
+    font-weight: normal;;
+    color: #697789;
 }
 
-.audio__artist {
-    font-size: 16px;
-    text-align: center;
-}
-
-.audio__volumecontrol {
-    margin-top: 16px;
+.navbar__items {
+    position: fixed;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-left: 16px;
 }
 
-.audio__timestamp {
-    color: #121212;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.audio__timestamp--slider {
-    margin: 8px 4px;
-    width: 200px;
-}
-
-.audio__volumecontrol--slider {
-    margin: 0 8px;
+.navbar__logo--img {
     width: 100px;
 }
 
-.audio__volumecontrol ::-webkit-slider-runnable-track{
-    -webkit-appearance: none;
-    height: 5px;
-    border-radius: 8px;
-    background: rgba(101, 38, 228, 0.233);
-    border: none;
-}
-
-.audio__volumecontrol ::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    border: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #7342d6;
-    margin-top: -4px;
-}
-
-.audio__timestamp ::-webkit-slider-runnable-track{
-    -webkit-appearance: none;
-    height: 5px;
-    border-radius: 8px;
-    background: rgba(101, 38, 228, 0.233);
-    border: none;
-}
-
-.audio__timestamp ::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    border: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #7342d6;
-    margin-top: -4px;
-}
-
-
-
-.audio__volumecontrol ::-moz-range-track{
-    -webkit-appearance: none;
-    height: 5px;
-    border-radius: 8px;
-    background: transparent;
-    background: rgba(101, 38, 228, 0.233);
-    border: none;
-}
-
-.audio__volumecontrol ::-moz-range-thumb{
-    -webkit-appearance: none;
-    border: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #7342d6;
-    margin-top: -4px;
-}
-
-.audio__timestamp ::-moz-range-track{
-    -webkit-appearance: none;
-    height: 5px;
-    border-radius: 8px;
-    background: rgba(101, 38, 228, 0.233);
-    border: none;
-}
-
-.audio__timestamp ::-moz-range-thumb{
-    -webkit-appearance: none;
-    border: none;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #7342d6;
-    margin-top: -4px;
-}
-
-
-
-
-
-.audio__volmecontrol--icon {
-    color: #7342d6;
-    font-size: 14px;
-}
-
-input[type=range]{
-    -webkit-appearance: none;
-    background: transparent;
-}
-
-.audio__controller--pauseplay {
+.navbar__item--link{
+    list-style-type: none;
+    color: #697789;
+    text-decoration: none;
+    font-weight: 500;
     font-size: 20px;
+}
+
+.navbar__item{
+    list-style-type: none;
+}
+
+.active {
+    color: #7342d6;
+}
+
+.active {
+    color: #7342d6;
+}
+
+.navbar__item--link:hover {
+    text-decoration: underline;
+    color: #7342d6;
+    transition: all 100ms ease;
+    border-left: 3px solid #7342d6;
+}
+
+.navbar__item--link:hover .row-nav {
+    border-left: 3px solid #7342d6;
+    
 }
