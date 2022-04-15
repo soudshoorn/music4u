@@ -305,10 +305,10 @@ function handleTopTen() {
 // Highlighted
 //
 function handleLoadHighlights() {
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 15; i++) {
       let randomSongs = Math.floor(Math.random() * songsList.length);
       let song = songsList[randomSongs];
-      let background = backgroundGradients[i];
+      let background = backgroundGradients[randomSongs];
   
       audioFile.src = song.audio;
   
@@ -381,6 +381,7 @@ function handlePauseAudio(event) {
 }
 
 function handleAudioEnd() {
+    audioTimeStampSlider.value = 0;
     audioActive = false;
     audioPlay.innerHTML = '<i class="fas fa-play"></i>';
 }
