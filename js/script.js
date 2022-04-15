@@ -222,6 +222,11 @@ const songsList = [
 //
 //
 
+// Play song
+let audioActive = false;
+const audioFile = document.querySelector('.audio__file');
+const audioPausePlay = document.querySelectorAll('.highlighted__button--play');
+
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 const topTenList = [];
@@ -236,10 +241,12 @@ const previousBackground = [];
 // Event listeners
 //
 //
+audioFile.addEventListener('ended', handleAudioEnd);
+
 
 // Standard runned functions
 handleTopTen();
-handleHighlights(10);
+handleLoadHighlights();
 
 // 
 // Top Ten Results
@@ -266,21 +273,18 @@ function handleTopTen() {
     }
 }
 
+
 //
 // Highlighted
 //
-
-// function randomBackground() {
-//     return randomBackground;
-// }
-
-function handleHighlights(number) {
-    for (i = 0; i < number; i++) {
+function handleLoadHighlights() {
+    for (i = 0; i < 10; i++) {
         let randomSongs = Math.floor(Math.random() * songsList.length);
         let song = songsList[randomSongs];
-
             let background = backgroundGradients[i];
-    
+
+            audioFile.src = song.audio;
+
             highlightsOutput.innerHTML += `
             <div class="highlighted__song" style="${background.backgroundcolor} ${background.backgroundimg}">
                 <div class="highlighted__description">
@@ -288,12 +292,43 @@ function handleHighlights(number) {
                     <p class="highlighted__description--para">${song.artist}</p>
                 </div>
                 <div class="highlighted__footer">
-                    <button class="highlighted__button--play"><i class="fas fa-play-circle"></i></button>
+                    <button class="highlighted__button--play"><i class="fas fa-play-circle highlighted__button--icon"></i></button>
                     <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
                 </div>
             </div>
             `;
-        
     }
+}
+
+
+highlightsOutput.addEventListener('click', function(e){
+    if (e.target.classList.contains('highlighted__button--icon')) {
+        console.log('d');
+        handlePlayAudio();
+        audioPausePlay.innerHTML = '<i class="fas fa-pause-cirlce highlighted__button--icon"></i>';
+    }
+})
+
+
+
+function handlePlayAudio() {
+    if (audioActive) {
+        handlePauseAudio();
+        return;
+    } else {
+        audioActive = true;
+        audioFile.play();
+    }
+}
+
+function handlePauseAudio() {
+    audioActive = false;
+    audioPausePlay.innerHTML = '<i class="fas fa-play-circle"></i>';
+    audioFile.pause();
+}
+
+function handleAudioEnd() {
+    audioActive = false;
+    audioPausePlay.innerHTML = '<i class="fas fa-play"></i>';
 }
 

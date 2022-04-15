@@ -316,10 +316,16 @@ EXPLORE
 }
 
 .highlighted__button--play {
+    cursor: pointer;
     font-size: 46px;
     color: white;
     background: transparent;
     border: none;
+}
+
+.highlighted__button--play:hover {
+    transition: all 200ms ease;
+    color: rgba(255, 255, 255, 0.644);
 }
 
 
