@@ -337,6 +337,12 @@ EXPLORE
 
 
 @media (max-width:728px){
+    .explore__title {
+        margin: 16px;
+        margin-bottom: 0;
+        align-self: start;
+        font-size: 64px;
+    }
     nav {
         display: none;
     }
