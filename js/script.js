@@ -279,32 +279,31 @@ function handleTopTen() {
 //
 function handleLoadHighlights() {
     for (i = 0; i < 10; i++) {
-        let randomSongs = Math.floor(Math.random() * songsList.length);
-        let song = songsList[randomSongs];
-            let background = backgroundGradients[i];
-
-            audioFile.src = song.audio;
-
-            highlightsOutput.innerHTML += `
-            <div class="highlighted__song" style="${background.backgroundcolor} ${background.backgroundimg}">
-                <div class="highlighted__description">
-                    <h3 class="highlighted__description--title">${song.title}</h3>
-                    <p class="highlighted__description--para">${song.artist}</p>
-                </div>
-                <div class="highlighted__footer">
-                    <button class="highlighted__button--play"><i class="fas fa-play-circle highlighted__button--icon" value="${i}"></i></button>
-                    <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
-                </div>
-            </div>
-            `;
+      let randomSongs = Math.floor(Math.random() * songsList.length);
+      let song = songsList[randomSongs];
+      let background = backgroundGradients[i];
+  
+      audioFile.src = song.audio;
+  
+      highlightsOutput.innerHTML += `
+              <div class="highlighted__song" style="${background.backgroundcolor} ${background.backgroundimg}">
+                  <div class="highlighted__description">
+                      <h3 class="highlighted__description--title">${song.title}</h3>
+                      <p class="highlighted__description--para">${song.artist}</p>
+                  </div>
+                  <div class="highlighted__footer">
+                      <button class="highlighted__button--play"><i data-song="${randomSongs}" class="fas fa-play-circle highlighted__play--icon"></i></button>
+                      <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
+                  </div>
+              </div>
+              `;
     }
-}
+  }
 
 highlightsOutput.addEventListener('click', function(e){
     if (e.target.classList.contains('highlighted__button--play') || 
-        e.target.closest('.highlighted__button--play') !== null
-    ) {
-        handlePlayAudio();
+        e.target.closest('.highlighted__button--play') !== null) {
+        handlePlayAudio(e);
     }
 })
 
@@ -312,25 +311,40 @@ highlightsOutput.addEventListener('click', function(e){
 
 
 
-function handlePlayAudio() {
+function handlePlayAudio(event) {
+    let songIndex = event.target.dataset.song;
+    audioFile.src = songsList[songIndex].audio;
+    let playButton = event.target.closest('.highlighted__play--icon');
     if (audioActive) {
         handlePauseAudio();
         return;
     } else {
         audioActive = true;
-        audioPausePlay.innerHTML = '<i class="fas fa-pause-cirlce highlighted__button--icon"></i>';
+        playButton.classList.remove('fa-play-circle');
+        playButton.classList.add('fa-pause-circle');
+
         audioFile.play();
     }
 }
 
 function handlePauseAudio() {
+    let songIndex = event.target.dataset.song;
+    audioFile.src = songsList[songIndex].audio;
+    let playButton = event.target.closest('.highlighted__play--icon');
+
     audioActive = false;
-    audioPausePlay.innerHTML = '<i class="fas fa-play-circle"></i>';
+    playButton.classList.remove('fa-pause-circle');
+    playButton.classList.add('fa-play-circle');
     audioFile.pause();
 }
 
 function handleAudioEnd() {
+    let songIndex = event.target.dataset.song;
+    audioFile.src = songsList[songIndex].audio;
+
+    let playButton = event.target.closest('.highlighted__play--icon');
     audioActive = false;
-    audioPausePlay.innerHTML = '<i class="fas fa-play"></i>';
+    playButton.classList.remove('fa-pause-circle');
+    playButton.classList.add('fa-play-circle');
 }
 

@@ -172,6 +172,7 @@ RIGHTBAR
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    bottom: 0;
 }
 
 /*
@@ -243,7 +244,7 @@ EXPLORE
 }
 
 .explore__highlighted {
-    margin: 32px;
+    margin: 32px 16px;
     align-self: start;
 }
 
@@ -273,8 +274,11 @@ EXPLORE
 }
 
 .explore__output {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .highlighted__description--title {
@@ -335,5 +339,22 @@ EXPLORE
 @media (max-width:728px){
     nav {
         display: none;
+    }
+    .rightbar{
+        display: none;
+    }
+
+    .highlighted__song {
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        width: 45%;
+        height: 220px;
+        padding: 8px;  
+        margin: 24px 16px 0 0;
+    }
+    .highlighted__description--title {
+        font-size: 24px;
     }
 }
