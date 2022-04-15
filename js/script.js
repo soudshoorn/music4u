@@ -1,5 +1,49 @@
 console.log('script js loaded');
 
+// Background Gradients
+const backgroundGradients = [
+    {
+        backgroundcolor: "background-color: #FF3CAC;",
+        backgroundimg: "background-image: linear-gradient(225deg, #FF3CAC 0%, #2B86C5 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #FBDA61;",
+        backgroundimg: "background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #21D4FD;",
+        backgroundimg: "background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #0093E9;",
+        backgroundimg: "background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #667eea;",
+        backgroundimg: "background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },//
+    {
+        backgroundcolor: "background-color: #00c6fb;",
+        backgroundimg: "background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #7028e4;",
+        backgroundimg: "background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #ff0844;",
+        backgroundimg: "background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #f83600;",
+        backgroundimg: "background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%)"
+    },
+    {
+        backgroundcolor: "background-color: #616161;",
+        backgroundimg: "background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%)"
+    }
+];
+
 // Songs 
 const songsList = [
     {
@@ -43,7 +87,7 @@ const songsList = [
         released: 1988
     },
     {
-        title: "They Reminisce Over You (T.R.O.Y.)",
+        title: "They Reminisce Over You",
         artist: "Pete Rock & C.L. Smooth",
         img: 'troy.jpg',
         audio: 'https://dl.dropbox.com/s/n6yf8gpjy2bugeo/OnlyMP3.net%20-%20Pete%20Rock%20%26%20CL%20Smooth%20-%20They%20Reminisce%20Over%20You%20%28T.R.O.Y.%29%20%28Official%20Video%29-k6mdRv0ZdR8-192k-1641470815337.mp3?dl=0',
@@ -184,6 +228,8 @@ const topTenList = [];
 
 // Highlighted Variables
 const highlightsOutput = document.querySelector('.explore__output');
+const previousBackground = [];
+
 
 //
 //
@@ -193,7 +239,7 @@ const highlightsOutput = document.querySelector('.explore__output');
 
 // Standard runned functions
 handleTopTen();
-handleHighlights();
+handleHighlights(10);
 
 // 
 // Top Ten Results
@@ -223,23 +269,31 @@ function handleTopTen() {
 //
 // Highlighted
 //
-function handleHighlights() {
-    for (i = 0; i < 8; i++) {
+
+// function randomBackground() {
+//     return randomBackground;
+// }
+
+function handleHighlights(number) {
+    for (i = 0; i < number; i++) {
         let randomSongs = Math.floor(Math.random() * songsList.length);
         let song = songsList[randomSongs];
 
-        highlightsOutput.innerHTML += `
-        <div class="highlighted__song">
-            <div class="highlighted__description">
-                <h3 class="highlighted__description--title">${song.title}</h3>
-                <p class="highlighted__description--para">${song.artist}</p>
+            let background = backgroundGradients[i];
+    
+            highlightsOutput.innerHTML += `
+            <div class="highlighted__song" style="${background.backgroundcolor} ${background.backgroundimg}">
+                <div class="highlighted__description">
+                    <h3 class="highlighted__description--title">${song.title}</h3>
+                    <p class="highlighted__description--para">${song.artist}</p>
+                </div>
+                <div class="highlighted__footer">
+                    <button class="highlighted__button--play"><i class="fas fa-play-circle"></i></button>
+                    <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
+                </div>
             </div>
-            <div class="highlighted__footer">
-                <button class="highlighted__button--play"><i class="fas fa-play-circle"></i></button>
-                <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
-            </div>
-        </div>
-        `;
+            `;
+        
     }
 }
 
