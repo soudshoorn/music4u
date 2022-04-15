@@ -30,6 +30,8 @@ NAV
 */
 
 nav {
+    position: -webkit-sticky;
+    position: sticky;
     float: left;
     width: 100%;
     max-width: 300px;
@@ -38,7 +40,7 @@ nav {
     top: 0; 
     left: 0;
     border-right: #333446 2px solid;
-    overflow-x: hidden; 
+    overflow: hidden; 
     padding-top: 30px;
 }
 
@@ -165,7 +167,15 @@ RIGHTBAR
     max-height: 100vh;
 }
 
-.rightbar {
+#rightbar{
+    background-color: #1c1d31;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+    border-right: #333446 2px solid;
+}
+
+.rightbar { 
     border-left: #333446 1px solid;
     float: right;
     display: flex;
@@ -370,15 +380,21 @@ MUSIC BAR
 }
 
 .btn__controller {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     border-radius: 50%;
     border: none;
     background-color: #7342d69a;
     color: white;
     text-align: center;
     margin: 0 4px;
+}
+
+.musicbar__controller--pauseplay {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
 }
 
 .btn__controller:hover {
@@ -414,7 +430,7 @@ MUSIC BAR
 
 .musicbar__volumecontrol--slider {
     margin: 0 8px;
-    width: 100px;
+    width: 5vw;
 }
 
 .musicbar__volmecontrol--icon {
@@ -513,6 +529,43 @@ input[type=range]{
     font-size: 20px;
 }
 
+/*
+
+MEDIA QUERIES 
+
+*/
+
+@media (max-width:1200px){
+    .musicbar__timestamp--slider {
+        width: 30vw;
+    }
+    .musicbar__volumecontrol--slider {
+        width: 6vw;
+    }
+    .musicbar__cover--img {
+        border: 2px white solid;
+        margin-bottom: 24px;
+        width: 80px;
+    }
+    .btn__controller {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: #7342d69a;
+        color: white;
+        text-align: center;
+        margin: 0 4px;
+        font-size: 12px;
+    }
+    .musicbar__controller--pauseplay {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
 @media (max-width:728px){
     .explore__title {
         margin: 16px;
@@ -526,14 +579,13 @@ input[type=range]{
     .rightbar{
         display: none;
     }
-
     .highlighted__song {
         z-index: 0;
         display: flex;
         flex-direction: column;
         border-radius: 4px;
         width: 45%;
-        height: 220px;
+        height: 200px;
         padding: 8px;  
         margin: 0;
     }
@@ -548,5 +600,48 @@ input[type=range]{
         display: flex;
         justify-content: start;
         margin: 0 0 24px 8px;
+    }
+    .musicbar__cover--img {
+        border: 2px white solid;
+        margin: 0 8px 12px 0;
+        width: 60px;
+    }
+    .musicbar__description {
+        width: 100%;
+        max-width: 40%;
+        font-size: 14px;
+    }
+    .musicbar__volumecontrol{
+        display: none;
+    }
+    .musicbar {
+        margin: 0 8px;
+    }
+    .musicbar__timestamp {
+        display: none;
+    }
+}
+
+
+@media (max-width:400px){
+    .btn__controller {
+        display: none;
+    }
+    .musicbar__controller--pauseplay {
+        display: inline;
+    }
+    .musicbar__description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+    }
+    .musicbar__cover--img {
+        border: 2px white solid;
+        margin: 0 8px 36px 0;
+        width: 70px;
+    }
+    .musicbar {
+        display: flex;
+        justify-content: space-around;
     }
 }
