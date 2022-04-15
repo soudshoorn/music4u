@@ -21,7 +21,7 @@ const backgroundGradients = [
     {
         backgroundcolor: "background-color: #667eea;",
         backgroundimg: "background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-    },//
+    },
     {
         backgroundcolor: "background-color: #00c6fb;",
         backgroundimg: "background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
@@ -263,10 +263,7 @@ audioPlay.addEventListener('click', handlePlayAudio);
 audioVolumeSlider.addEventListener('change', function(){audioFile.volume = audioVolumeSlider.value / 100;})
 audioTimeStampSlider.addEventListener('change', function(){audioFile.currentTime = audioTimeStampSlider.value;})
 audioFile.addEventListener('timeupdate', handleTimeStamp);
-audioFile.addEventListener('timeupdate', function(){
-    console.log('test');
-    audioTimeStampSlider.value = audioFile.currentTime;
-});
+audioFile.addEventListener('timeupdate', function(){audioTimeStampSlider.value = audioFile.currentTime;});
 audioFile.addEventListener('loadedmetadata', handleDuration);
 audioPre.addEventListener('click', handlePreviousSong);
 audioNext.addEventListener('click', handleNextSong);
