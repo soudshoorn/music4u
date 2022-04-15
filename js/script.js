@@ -292,7 +292,7 @@ function handleLoadHighlights() {
                     <p class="highlighted__description--para">${song.artist}</p>
                 </div>
                 <div class="highlighted__footer">
-                    <button class="highlighted__button--play"><i class="fas fa-play-circle highlighted__button--icon"></i></button>
+                    <button class="highlighted__button--play"><i class="fas fa-play-circle highlighted__button--icon" value="${i}"></i></button>
                     <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
                 </div>
             </div>
@@ -300,14 +300,15 @@ function handleLoadHighlights() {
     }
 }
 
-
 highlightsOutput.addEventListener('click', function(e){
-    if (e.target.classList.contains('highlighted__button--icon')) {
-        console.log('d');
+    if (e.target.classList.contains('highlighted__button--play') || 
+        e.target.closest('.highlighted__button--play') !== null
+    ) {
         handlePlayAudio();
-        audioPausePlay.innerHTML = '<i class="fas fa-pause-cirlce highlighted__button--icon"></i>';
     }
 })
+
+
 
 
 
@@ -317,6 +318,7 @@ function handlePlayAudio() {
         return;
     } else {
         audioActive = true;
+        audioPausePlay.innerHTML = '<i class="fas fa-pause-cirlce highlighted__button--icon"></i>';
         audioFile.play();
     }
 }
