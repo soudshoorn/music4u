@@ -1,7 +1,7 @@
 console.log('script js loaded');
 
 // Songs 
-const songsHipHop = [
+const songsList = [
     {
         title: "I Used to Love H.E.R.",
         artist: "Common",
@@ -178,30 +178,12 @@ const songsHipHop = [
 //
 //
 
-// Audio Player Variables
-const audioSection = document.querySelector('#audio');
-const audioFigureImg = document.querySelector('.audio__cover');
-const audioImg = document.querySelector('.audio__cover--img');
-const audioTitle = document.querySelector('.audio__title');
-const audioArtist = document.querySelector('.audio__artist');
-const audioController = document.querySelector('.audio__controller');
-const audioPre = document.querySelector('.audio__controller--previous');
-const audioPausePlay = document.querySelector('.audio__controller--pauseplay');
-const audioNext = document.querySelector('.audio__controller--next');
-const audioFile = document.querySelector('.audio__file');
-const audioVolumeSlider = document.querySelector('.audio__volumecontrol--slider');
-const audioTimeStampSlider = document.querySelector('.audio__timestamp--slider');
-const audioTime = document.querySelector('.audio__timestamp--currenttime');
-const audioDuration = document.querySelector('.audio__timestamp--fulltime');
-
-let autoPlay = true;
-let audioActive = false;
-let previousSongs = [];
-let previousSong = songsHipHop[previousSongs[previousSongs.length - 2]];
-
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 const topTenList = [];
+
+// Highlighted Variables
+const highlightsOutput = document.querySelector('.explore__output');
 
 //
 //
@@ -209,110 +191,17 @@ const topTenList = [];
 //
 //
 
-// Audio player event listeners
-audioPausePlay.addEventListener('click', handlePlayAudio);
-audioVolumeSlider.addEventListener('change', function(){audioFile.volume = audioVolumeSlider.value / 100;})
-audioTimeStampSlider.addEventListener('change', function(){audioFile.currentTime = audioTimeStampSlider.value;})
-audioFile.addEventListener('ended', handleAudioEnd);
-audioFile.addEventListener('timeupdate', handleTimeStamp);
-audioFile.addEventListener('loadedmetadata', handleDuration);
-audioPre.addEventListener('click', handlePreviousSong);
-audioNext.addEventListener('click', handleNextSong);
-
-loadAudio(); // Load a random song
-
-//
-// Audio Player
-//
-function loadAudio() {
-    let randomSong = Math.floor(Math.random() * songsHipHop.length);
-    let song = songsHipHop[randomSong];
-    previousSongs.push(randomSong);
-
-    if (previousSongs[previousSongs.length - 1] == previousSongs[previousSongs.length - 2] || previousSongs[previousSongs.length - 1] == previousSongs[previousSongs.length - 3]){
-        loadAudio();
-        return;
-    } else {
-        for (i = 0; i < songsHipHop.length; i++) {
-            audioImg.src = `../assets/covers/${song.img}`;
-            audioTitle.textContent = song.title;
-            audioArtist.textContent = song.artist;
-            audioFile.src = song.audio;
-        }
-    }
-}
-
-function handlePlayAudio() {
-    if (audioActive) {
-        handlePauseAudio();
-        return;
-    } else {
-        audioActive = true;
-        audioPausePlay.innerHTML = '<i class="fas fa-pause"></i>';
-        audioFile.play();
-    }
-}
-
-function handlePauseAudio() {
-    audioActive = false;
-    audioPausePlay.innerHTML = '<i class="fas fa-play"></i>';
-    audioFile.pause();
-}
-
-function handleTimeStamp() {
-    let seconds = parseInt(audioFile.currentTime % 60);
-    let minute = parseInt((audioFile.currentTime / 60) % 60);
-    if (seconds < 10) {
-        seconds = `0${seconds}`;
-    }
-
-    audioTime.textContent = `${minute}:${seconds}`;
-}
-
-function handleDuration() {
-    audioTimeStampSlider.max = audioFile.duration;
-    audioTimeStampSlider.value = 0;
-
-    let ds = parseInt(audioFile.duration % 60);
-    let dm = parseInt((audioFile.duration / 60) % 60);
-
-    audioDuration.textContent = `${dm}:${ds}`;
-}
-
-function handleAudioEnd() {
-    audioActive = false;
-    audioPausePlay.innerHTML = '<i class="fas fa-play"></i>';
-    audioTimeStampSlider.value = 0;
-}
-
-function handleNextSong(){
-    loadAudio();
-    handleAudioEnd();
-    handlePlayAudio();
-}
-
-function handlePreviousSong(){
-    if (previousSongs.length == 1) {
-        return;
-    } else {
-        audioImg.src = `../assets/covers/${previousSong.img}`;
-        audioTitle.textContent = previousSong.title;
-        audioArtist.textContent = previousSong.artist;
-        audioFile.src = previousSong.audio;
-
-        previousSongs.pop(0);
-        handleAudioEnd();
-        handlePlayAudio();
-    }
-}
+// Standard runned functions
+handleTopTen();
+handleHighlights();
 
 // 
 // Top Ten Results
 //
 function handleTopTen() {
-    for (i = 1; i < 11; i++) {
-        let randomSongs = Math.floor(Math.random() * songsHipHop.length);
-        let song = songsHipHop[randomSongs];
+    for (i = 1; i < 7; i++) {
+        let randomSongs = Math.floor(Math.random() * songsList.length);
+        let song = songsList[randomSongs];
 
         if (topTenList.includes(song.title)){
             i -= 1;
@@ -328,9 +217,29 @@ function handleTopTen() {
             </div>
             `;
         }
+    }
+}
 
-        console.log(randomSongs);
-        console.log(topTenList);
+//
+// Highlighted
+//
+function handleHighlights() {
+    for (i = 0; i < 8; i++) {
+        let randomSongs = Math.floor(Math.random() * songsList.length);
+        let song = songsList[randomSongs];
+
+        highlightsOutput.innerHTML += `
+        <div class="highlighted__song">
+            <div class="highlighted__description">
+                <h3 class="highlighted__description--title">${song.title}</h3>
+                <p class="highlighted__description--para">${song.artist}</p>
+            </div>
+            <div class="highlighted__footer">
+                <button class="highlighted__button--play"><i class="fas fa-play-circle"></i></button>
+                <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
+            </div>
+        </div>
+        `;
     }
 }
 

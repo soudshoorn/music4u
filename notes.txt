@@ -1,0 +1,79 @@
+                        NAVBAR
+                        
+                        
+                        <!-- <ul class="navbar__list">
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-globe-americas navbar__item--icon active"></i>
+                                        <a class="navbar__item--link active" href="/">Ontdek</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-music navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Genres</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-podcast navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Radio</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-address-book navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Artiesten</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-compact-disc navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Afspeellijsten</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-question navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">FAQ</a>
+                                    </li>
+                                </a>
+                            </div>
+                        </ul>
+                        <ul class="navbar__settinglist">
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Profiel</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Over Ons</a>
+                                    </li>
+                                </a>
+                            </div>
+                            <div class="navbar__item">
+                                <a href="/" class="navbar__item--href">
+                                    <li class="navbar__item--list">
+                                        <i class="fas fa-globe-americas navbar__item--icon"></i>
+                                        <a class="navbar__item--link active" href="/">Contact</a>
+                                    </li>
+                                </a>
+                            </div>
+                        </ul> -->
