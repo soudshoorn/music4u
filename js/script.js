@@ -227,6 +227,24 @@ let audioActive = false;
 const audioFile = document.querySelector('.audio__file');
 const audioPausePlay = document.querySelectorAll('.highlighted__button--play');
 
+const audioPlay = document.querySelector('.musicbar__controller--pauseplay');
+const audioSection = document.querySelector('#audio');
+const audioFigureImg = document.querySelector('.musicbar__cover');
+const audioImg = document.querySelector('.musicbar__cover--img');
+const audioTitle = document.querySelector('.musicbar__description--title');
+const audioArtist = document.querySelector('.musicbar__description--artist');
+const audioController = document.querySelector('.musicbar__controller');
+const audioPre = document.querySelector('.musicbar__controller--previous');
+const audioNext = document.querySelector('.musicbar__controller--next');
+const audioVolumeSlider = document.querySelector('.musicbar__volumecontrol--slider');
+const audioTimeStampSlider = document.querySelector('.musicbar__timestamp--slider');
+const audioTime = document.querySelector('.musicbar__timestamp--currenttime');
+const audioDuration = document.querySelector('.musicbar__timestamp--fulltime');
+
+let previousSongs = [];
+let test1 = previousSongs[previousSongs.length - 2];
+let previousSong = songsList[test1];
+
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 const topTenList = [];
@@ -241,12 +259,24 @@ const previousBackground = [];
 // Event listeners
 //
 //
+audioPlay.addEventListener('click', handlePlayAudio);
+audioVolumeSlider.addEventListener('change', function(){audioFile.volume = audioVolumeSlider.value / 100;})
+audioTimeStampSlider.addEventListener('change', function(){audioFile.currentTime = audioTimeStampSlider.value;})
+audioFile.addEventListener('timeupdate', handleTimeStamp);
+audioFile.addEventListener('timeupdate', function(){
+    console.log('test');
+    audioTimeStampSlider.value = audioFile.currentTime;
+});
+audioFile.addEventListener('loadedmetadata', handleDuration);
+audioPre.addEventListener('click', handlePreviousSong);
+audioNext.addEventListener('click', handleNextSong);
 audioFile.addEventListener('ended', handleAudioEnd);
 
 
 // Standard runned functions
 handleTopTen();
 handleLoadHighlights();
+defaultAudio();
 
 // 
 // Top Ten Results
@@ -303,48 +333,100 @@ function handleLoadHighlights() {
 highlightsOutput.addEventListener('click', function(e){
     if (e.target.classList.contains('highlighted__button--play') || 
         e.target.closest('.highlighted__button--play') !== null) {
-        handlePlayAudio(e);
+            if (audioActive){
+                handlePlayAudio(e);
+            } else {
+                loadAudio(e);
+                console.log(e);
+                handlePlayAudio(e);
+            }
     }
 })
 
+function defaultAudio() {
+    let song = songsList[3];
 
+    audioImg.src = `../assets/covers/${song.img}`;
+    audioTitle.textContent = song.title;
+    audioArtist.textContent = song.artist;
+    audioFile.src = song.audio;
+}
 
+function loadAudio(event) {
+    let songIndex = event.target.dataset.song;
 
+    let song = songsList[songIndex];
+    previousSongs.push(songIndex);
+
+    for (i = 0; i < songsList.length; i++) {
+        audioImg.src = `../assets/covers/${song.img}`;
+        audioTitle.textContent = song.title;
+        audioArtist.textContent = song.artist;
+        audioFile.src = song.audio;
+    }
+}
 
 function handlePlayAudio(event) {
-    let songIndex = event.target.dataset.song;
-    audioFile.src = songsList[songIndex].audio;
-    let playButton = event.target.closest('.highlighted__play--icon');
     if (audioActive) {
-        handlePauseAudio();
+        handlePauseAudio(event);
         return;
     } else {
         audioActive = true;
-        playButton.classList.remove('fa-play-circle');
-        playButton.classList.add('fa-pause-circle');
-
+        audioPlay.innerHTML = '<i class="fas fa-pause"></i>';
         audioFile.play();
     }
 }
 
-function handlePauseAudio() {
-    let songIndex = event.target.dataset.song;
-    audioFile.src = songsList[songIndex].audio;
-    let playButton = event.target.closest('.highlighted__play--icon');
-
+function handlePauseAudio(event) {
     audioActive = false;
-    playButton.classList.remove('fa-pause-circle');
-    playButton.classList.add('fa-play-circle');
+    audioPlay.innerHTML = '<i class="fas fa-play"></i>';
     audioFile.pause();
 }
 
 function handleAudioEnd() {
-    let songIndex = event.target.dataset.song;
-    audioFile.src = songsList[songIndex].audio;
-
-    let playButton = event.target.closest('.highlighted__play--icon');
     audioActive = false;
-    playButton.classList.remove('fa-pause-circle');
-    playButton.classList.add('fa-play-circle');
+    audioPlay.innerHTML = '<i class="fas fa-play"></i>';
 }
 
+function handleTimeStamp() {
+    let seconds = parseInt(audioFile.currentTime % 60);
+    let minute = parseInt((audioFile.currentTime / 60) % 60);
+
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
+    }
+
+    audioTime.textContent = `${minute}:${seconds}`;
+}
+
+function handleDuration() {
+    audioTimeStampSlider.max = audioFile.duration;
+    audioTimeStampSlider.value = 0;
+
+    let ds = parseInt(audioFile.duration % 60);
+    let dm = parseInt((audioFile.duration / 60) % 60);
+
+    audioDuration.textContent = `${dm}:${ds}`;
+}
+
+function handleNextSong(){
+    loadAudio();
+    handleAudioEnd();
+    handlePlayAudio();
+}
+
+function handlePreviousSong(){
+    if (previousSongs.length == 1) {
+        return;
+    } else {
+
+        audioImg.src = `../assets/covers/${previousSong.img}`;
+        audioTitle.textContent = previousSong.title;
+        audioArtist.textContent = previousSong.artist;
+        audioFile.src = previousSong.audio;
+
+        previousSongs.pop(0);
+        handleAudioEnd();
+        handlePlayAudio();
+    }
+}

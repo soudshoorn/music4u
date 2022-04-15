@@ -173,7 +173,7 @@ const songsHipHop = [
 ];
 
 // Audio player Variables
-const audioSection = document.querySelector('#audio');
+const audioSection = document.querySelector('#musicbar');
 const audioFigureImg = document.querySelector('.audio__cover');
 const audioImg = document.querySelector('.audio__cover--img');
 const audioTitle = document.querySelector('.audio__title');
