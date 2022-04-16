@@ -284,8 +284,32 @@ EXPLORE
     padding: 8px;  
 }
 
+.explore__title--wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.topheader__icon--button {
+    display: none;
+    margin: 32px 32px 0 0;
+    font-size: 40px;
+    color: #6e7d8f;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.topheader__icon--button:hover {
+    font-size: 40px;
+    color: #7342d6;
+    transition: all 300ms ease;
+}
+
 .explore__output {
     margin-top: 24px;
+    margin-bottom: 56px;
     gap: 8px;
     width: 100%;
     max-width: 1200px;
@@ -570,6 +594,9 @@ MEDIA QUERIES
 }
 
 @media (max-width:728px){
+    .topheader__icon--button{
+        display: block;
+    }
     .explore__title {
         margin: 16px;
         margin-bottom: 0;
@@ -606,8 +633,8 @@ MEDIA QUERIES
     }
     .musicbar__cover--img {
         border: 2px white solid;
-        margin: 0 8px 12px 0;
-        width: 60px;
+        margin: 0 8px 36px 0;
+        width: 80px;
     }
     .musicbar__description {
         width: 100%;
@@ -685,15 +712,15 @@ MEDIA QUERIES
         line-height: 20px;
     }
     .navbar__icons {
-        justify-content: start;
-        height: 70vh;
+        justify-content: space-around;
+        height: 60vh;
     }
     .navbar__item--icon {
         font-size: 20px;
     }
     .navbar__links {
-        justify-content: start;
-        height: 70vh;
+        justify-content: space-around;
+        height: 60vh;
     }
     .navbar__links--link {
         font-size: 18px;
