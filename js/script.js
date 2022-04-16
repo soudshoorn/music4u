@@ -279,27 +279,35 @@ defaultAudio();
 // Top Ten Results
 //
 function handleTopTen() {
-    for (i = 1; i < 7; i++) {
+    for (i = 0; i < 5; i++) {
         let randomSongs = Math.floor(Math.random() * songsList.length);
         let song = songsList[randomSongs];
 
-        if (topTenList.includes(song.title)){
-            i -= 1;
-        } else {
+        // if (topTenList.includes(song.title)){
+        //     i -= 1;
+        // } else {
             topTenList.push(song.title);
             topTenOutput.innerHTML += `
             <div class="topten__list">
-                <div class="topten__position">${i}</div>
+                <div class="topten__position">${i + 1}</div>
                 <div class="topten__description">
                     <h3 class="topten__description--title">${song.title}</h3>
                     <p class="topten__description--para">${song.artist}</p>
                 </div>
             </div>
             `;
-        }
+        // }
     }
 }
 
+//
+// Check for browser lighting mode
+//
+const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+darkModeMediaQuery.addListener((e) => {
+  const darkModeOn = e.matches;
+  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
+});
 
 //
 // Highlighted

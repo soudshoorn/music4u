@@ -72,7 +72,8 @@ nav {
 }
 
 .navbar__items {
-    margin-top: 24px;
+    margin: 24px 0;
+    margin-bottom: 76px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -117,43 +118,46 @@ TOP TEN
 .topten__list {
     display: flex;
     flex-direction: row;
-    margin: 30px 10px;
+    margin: 10px 10px;
 }
 
 .topten__description {
-    margin-top: 8px;
     color: white;
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
+    font-size: 14px;
 }
 
 .topten__position {
     margin-right: 16px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     -moz-border-radius: 50%;
     border-radius: 50%;
     background-color: rgba(115, 66, 214, 0.11);
-    border-left: #333446 1px solid;
     color: #7342d6;
     text-align: center;
     display: block;
     
     font-weight: bold;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .topten__title {
-    margin-left: 16px;
-    margin-top: 24px;
-    font-size: 26px;
+    margin: 20px 0 24px 16px;
+    font-size: 20px;
     color: white;
 }
 
 .topten__output {
     z-index: 5;
     background-color: #1c1d31;
+}
+
+.topten__description--para {
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
 /*
@@ -255,7 +259,7 @@ EXPLORE
 
 .explore__highlighted {
     margin: 32px 16px;
-    align-self: start;
+    align-items: center;
 }
 
 .highlighted__title {
@@ -268,9 +272,9 @@ EXPLORE
 }
 
 .highlighted__titles {
+    margin-left: 32px;
     display: flex;
 }
-
 
 .highlighted__song {
     z-index: 0;
@@ -280,10 +284,11 @@ EXPLORE
     width: 220px;
     height: 270px;
     padding: 8px;  
-    margin: 24px 16px 0 0;
 }
 
 .explore__output {
+    margin-top: 24px;
+    gap: 8px;
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -643,5 +648,59 @@ MEDIA QUERIES
     .musicbar {
         display: flex;
         justify-content: space-around;
+    }
+}
+
+@media (max-height:930px) {
+    .topten__description {
+        font-size: 12px;
+    }
+    
+    .topten__position {
+        width: 100%;
+        max-width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .topten__description--para {
+        font-size: 10px;
+    }
+    .rightbar__info {
+        color: #6e7d8f;
+        font-size: 12px;
+        margin-bottom: 78px;
+        margin-left: 16px;
+    }
+    .rightbar__socials--link {
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .navbar__items {
+        margin-top: 14px;
+    }
+    .navbar__item {
+        margin: 20px 12px;
+        color: #6e7d8f;
+        display: flex;
+        flex-direction: column;
+        line-height: 20px;
+    }
+    .navbar__icons {
+        justify-content: start;
+        height: 70vh;
+    }
+    .navbar__item--icon {
+        font-size: 20px;
+    }
+    .navbar__links {
+        justify-content: start;
+        height: 70vh;
+    }
+    .navbar__links--link {
+        font-size: 18px;
+    }
+    .navbar__logo--img {
+        width: 90px;
     }
 }
