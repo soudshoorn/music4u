@@ -68,27 +68,25 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 70vh;
+    height: 60vh;
 }
 
 .navbar__items {
-    margin: 24px 0;
-    margin-bottom: 76px;
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 100%;
 }
 
 .navbar__icons {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 70vh;
+    height: 60vh;
 }
 
 .navbar__item {
-    margin: 32px 12px;
+    margin: 24px 12px;
     color: #6e7d8f;
     display: flex;
     flex-direction: column;
@@ -651,7 +649,7 @@ MEDIA QUERIES
     }
 }
 
-@media (max-height:930px) {
+@media (max-height:730px) {
     .topten__description {
         font-size: 12px;
     }
