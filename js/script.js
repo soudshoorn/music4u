@@ -253,6 +253,7 @@ const audioTimeStampSlider = document.querySelector('.musicbar__timestamp--slide
 const audioTime = document.querySelector('.musicbar__timestamp--currenttime');
 const audioDuration = document.querySelector('.musicbar__timestamp--fulltime');
 
+let nextSongAmount = 0;
 let previousSongs = [];
 let test1 = previousSongs[previousSongs.length - 2];
 let previousSong = songsList[test1];
@@ -335,23 +336,16 @@ function handleLoadHighlights() {
                   </div>
               </div>
               `;
-    audioPre.addEventListener('click', handlePreviousSong);
-    audioNext.addEventListener('click', function() {
-        handleNextSong(i);
-    });
     }
   }
 
 highlightsOutput.addEventListener('click', function(e){
+    nextSongAmount = 0;
     if (e.target.classList.contains('highlighted__button--play') || 
         e.target.closest('.highlighted__button--play') !== null) {
-            if (audioActive){
-                handlePlayAudio(e);
-            } else {
                 loadAudio(e);
+                handleNextSong(e);
                 console.log(e);
-                handlePlayAudio();
-            }
     }
 })
 
@@ -365,10 +359,23 @@ function defaultAudio() {
 }
 
 function loadAudio(event) {
-    let songIndex = event.target.dataset.song;
+    const dataset = event.target.dataset.song;
+    let songIndex = parseInt(dataset);
+    if (nextSongAmount == 0) {
+        nextSongAmount = 0;
+    } else {
+        songIndex += nextSongAmount;
+    }
 
+    // } else if (prenext == 2){
+    //     songIndex = dataset -= 1;
+    // }
+
+    console.log(nextSongAmount);
     let song = songsList[songIndex];
     previousSongs.push(songIndex);
+
+    audioActive = false;
 
     for (i = 0; i < songsList.length; i++) {
         audioImg.src = `../assets/covers/${song.img}`;
@@ -376,6 +383,7 @@ function loadAudio(event) {
         audioArtist.textContent = song.artist;
         audioFile.src = song.audio;
     }
+    handlePlayAudio();
 }
 
 function handlePlayAudio() {
@@ -422,24 +430,17 @@ function handleDuration() {
     audioDuration.textContent = `${dm}:${ds}`;
 }
 
-function handleNextSong(){
-    loadAudio();
-    handleAudioEnd();
-    handlePlayAudio();
+function handleNextSong(currentSong){
+    audioNext.addEventListener('click', function() {
+        handleAudioEnd();
+        nextSongAmount += 1;
+        loadAudio(currentSong);
+    });
 }
 
-function handlePreviousSong(){
-    if (previousSongs.length == 1) {
-        return;
-    } else {
-
-        audioImg.src = `../assets/covers/${previousSong.img}`;
-        audioTitle.textContent = previousSong.title;
-        audioArtist.textContent = previousSong.artist;
-        audioFile.src = previousSong.audio;
-
-        previousSongs.pop(0);
+function handlePreviousSong(currentSong){
+    audioPre.addEventListener('click', function() {
         handleAudioEnd();
-        handlePlayAudio();
-    }
+        loadAudio(currentSong, 2);
+    });
 }
