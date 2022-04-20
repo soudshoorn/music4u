@@ -3,50 +3,51 @@ console.log('script js loaded');
 // Background Gradients
 const backgroundGradients = [
     {
-        backgroundcolor: "background-color: #FF3CAC;",
-        backgroundimg: "background-image: linear-gradient(225deg, #FF3CAC 0%, #2B86C5 100%)"
+        backgroundcolor: "#FF3CAC",
+        backgroundimg: " linear-gradient(225deg, #FF3CAC 0%, #2B86C5 100%)"
     },
     {
-        backgroundcolor: "background-color: #FBDA61;",
-        backgroundimg: "background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)"
+        backgroundcolor: "#FBDA61",
+        backgroundimg: " linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)"
     },
     {
-        backgroundcolor: "background-color: #21D4FD;",
-        backgroundimg: "background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
+        backgroundcolor: "#21D4FD",
+        backgroundimg: " linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
     },
     {
-        backgroundcolor: "background-color: #0093E9;",
-        backgroundimg: "background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
+        backgroundcolor: "#0093E9",
+        backgroundimg: " linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
     },
     {
-        backgroundcolor: "background-color: #667eea;",
-        backgroundimg: "background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+        backgroundcolor: "#667eea",
+        backgroundimg: " linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
-        backgroundcolor: "background-color: #00c6fb;",
-        backgroundimg: "background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
+        backgroundcolor: "#00c6fb",
+        backgroundimg: " linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
     },
     {
-        backgroundcolor: "background-color: #7028e4;",
-        backgroundimg: "background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"
+        backgroundcolor: "#7028e4",
+        backgroundimg: " linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"
     },
     {
-        backgroundcolor: "background-color: #ff0844;",
-        backgroundimg: "background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%)"
+        backgroundcolor: "#ff0844",
+        backgroundimg: " linear-gradient(to top, #ff0844 0%, #ffb199 100%)"
     },
     {
-        backgroundcolor: "background-color: #f83600;",
-        backgroundimg: "background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%)"
+        backgroundcolor: "#f83600",
+        backgroundimg: "linear-gradient(to right, #f83600 0%, #f9d423 100%)"
     },
     {
-        backgroundcolor: "background-color: #616161;",
-        backgroundimg: "background-image: linear-gradient(-20deg, #616161 0%, #9bc5c3 100%)"
+        backgroundcolor: "#61616",
+        backgroundimg: "linear-gradient(-20deg, #616161 0%, #9bc5c3 100%)"
     }
 ];
 
 // Songs 
 const songsList = [
     {
+        id: 1,
         title: "I Used to Love H.E.R.",
         artist: "Common",
         img: 'usedtoloveher.jpg',
@@ -56,6 +57,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 2,
         title: "The Message",
         artist: "Grandmaster Flash and the Furious Five",
         img: 'themessage.jpg',
@@ -65,6 +67,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 3,
         title: "Dear Mama",
         artist: "2Pac",
         img: 'dearmama.jpg',
@@ -74,6 +77,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 4,
         title: "Lyrics of Fury",
         artist: "Eric B. & Rakim",
         img: 'lyricsoffury.jpg',
@@ -83,6 +87,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 5,
         title: "They Reminisce Over You",
         artist: "Pete Rock & C.L. Smooth",
         img: 'troy.jpg',
@@ -92,6 +97,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 6,
         title: "The World Is Yours",
         artist: "Nas",
         img: 'theworldisyours.jpg',
@@ -101,6 +107,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 7,
         title: "Top Billin'",
         artist: "Audio Two",
         img: 'topbillin.jpg',
@@ -110,6 +117,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 8,
         title: "Fight the Power",
         artist: "Public Enemy",
         img: 'fightthepower.jpg',
@@ -119,6 +127,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 9,
         title: "Planet Rock",
         artist: "Afrika Bambaataa",
         img: 'planetrock.jpg',
@@ -128,6 +137,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 10,
         title: "Keep Ya Head Up",
         artist: "2Pac",
         img: 'keepyaheadup.jpg',
@@ -137,6 +147,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 11,
         title: "My Philosophy",
         artist: "Boogie Down Productions",
         img: 'myphilosophy.jpg',
@@ -146,6 +157,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 12,
         title: "I Need Love",
         artist: "LL Cool J",
         img: 'ineedlove.jpg',
@@ -155,6 +167,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 13,
         title: "Nuthin' but a 'G' Thang",
         artist: "Dr. Dre",
         img: 'nuthunbutagthang.jpg',
@@ -164,6 +177,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 14,
         title: "Juicy",
         artist: "The Notorious B.I.G",
         img: 'juicy.jpg',
@@ -173,6 +187,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 15,
         title: "Dead Presidents",
         artist: "Jay-Z",
         img: 'deadpresidents.jpg',
@@ -182,6 +197,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 16,
         title: "Scenario",
         artist: "A Tribe Called Quest",
         img: 'scenario.jpg',
@@ -191,6 +207,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 17,
         title: "Mind Playing Tricks on Me",
         artist: "Geto Boys",
         img: 'mindplayingtricksonme.jpg',
@@ -200,6 +217,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 18,
         title: "Straight Outta Compton",
         artist: "N.W.A",
         img: 'straightouttacompton.jpg',
@@ -209,6 +227,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 19,
         title: "C.R.E.A.M",
         artist: "Wu-Tang Clan",
         img: 'cream.jpg',
@@ -218,6 +237,7 @@ const songsList = [
         genre: 'hiphop'
     },
     {
+        id: 20,
         title: "Hip Hop",
         artist: "Dead Prez",
         img: 'hiphopdeadprez.jpg',
@@ -260,12 +280,9 @@ let previousSong = songsList[test1];
 
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
-const topTenList = [];
 
 // Highlighted Variables
 const highlightsOutput = document.querySelector('.explore__output');
-const previousBackground = [];
-
 
 //
 //
@@ -273,10 +290,10 @@ const previousBackground = [];
 //
 //
 audioPlay.addEventListener('click', handlePlayAudio);
-audioVolumeSlider.addEventListener('change', function(){audioFile.volume = audioVolumeSlider.value / 100;})
-audioTimeStampSlider.addEventListener('change', function(){audioFile.currentTime = audioTimeStampSlider.value;})
+audioVolumeSlider.addEventListener('change', function () { audioFile.volume = audioVolumeSlider.value / 100; })
+audioTimeStampSlider.addEventListener('change', function () { audioFile.currentTime = audioTimeStampSlider.value; })
 audioFile.addEventListener('timeupdate', handleTimeStamp);
-audioFile.addEventListener('timeupdate', function(){audioTimeStampSlider.value = audioFile.currentTime;});
+audioFile.addEventListener('timeupdate', function () { audioTimeStampSlider.value = audioFile.currentTime; });
 audioFile.addEventListener('loadedmetadata', handleDuration);
 audioFile.addEventListener('ended', handleAudioEnd);
 
@@ -284,7 +301,7 @@ audioFile.addEventListener('ended', handleAudioEnd);
 // Standard runned functions
 handleTopTen();
 handleLoadHighlights();
-defaultAudio();
+defaultAudio(2);
 
 // 
 // Top Ten Results
@@ -294,102 +311,74 @@ function handleTopTen() {
         let randomSongs = Math.floor(Math.random() * songsList.length);
         let song = songsList[randomSongs];
 
-        // if (topTenList.includes(song.title)){
-        //     i -= 1;
-        // } else {
-            topTenList.push(song.title);
-            topTenOutput.innerHTML += `
-            <div class="topten__list">
-                <div class="topten__position">${i + 1}</div>
-                <div class="topten__description">
-                    <h3 class="topten__description--title">${song.title}</h3>
-                    <p class="topten__description--para">${song.artist}</p>
-                </div>
+        topTenOutput.innerHTML += `
+        <div class="topten__list">
+            <div class="topten__position">${i + 1}</div>
+            <div class="topten__description">
+                <h3 class="topten__description--title">${song.title}</h3>
+                <p class="topten__description--para">${song.artist}</p>
             </div>
-            `;
-        // }
+        </div>
+        `;
     }
 }
 
 //
 // Highlighted
 //
+
 function handleLoadHighlights() {
-    for (i = 0; i < songsList.length; i++) {
-    //   let randomSongs = Math.floor(Math.random() * songsList.length);
-      let song = songsList[i];
+    songsList.map((song) => {
+        // Song card
+        var songDiv = document.createElement('div');
+        songDiv.classList.add('highlighted__song');
+        songDiv.onclick = function () { loadAudio(song); };
+        highlightsOutput.appendChild(songDiv);
+        songDiv.innerHTML = handleSongHTML(song);
+        // backgrounds
+        let randomBackground = Math.floor(Math.random() * backgroundGradients.length);
+        let background = backgroundGradients[randomBackground];
+        songDiv.style.backgroundColor = `${background.backgroundcolor}`;
+        songDiv.style.backgroundImage = `${background.backgroundimg}`;
+    }).join("");
+}
 
-      let randomBackground = Math.floor(Math.random() * backgroundGradients.length);
-      let background = backgroundGradients[randomBackground];
-  
-      audioFile.src = song.audio;
-  
-      highlightsOutput.innerHTML += `
-              <div class="highlighted__song" style="${background.backgroundcolor} ${background.backgroundimg}">
-                  <div class="highlighted__description">
-                      <h3 class="highlighted__description--title">${song.title}</h3>
-                      <p class="highlighted__description--para">${song.artist}</p>
-                  </div>
-                  <div class="highlighted__footer">
-                      <button class="highlighted__button--play"><i data-song="${i}" class="fas fa-play-circle highlighted__play--icon"></i></button>
-                      <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
-                  </div>
-              </div>
-              `;
-    }
-  }
+function handleSongHTML(song) {
+    return `
+    <div class="highlighted__description">
+        <h3 class="highlighted__description--title">${song.title}</h3>
+        <p class="highlighted__description--para">${song.artist}</p>
+    </div>
+    <div class="highlighted__footer">
+        <button class="highlighted__button--play"><i class="fas fa-play-circle highlighted__play--icon"></i></button>
+        <img class="highlighted__img" src="./assets/covers/${song.img}"></img>
+    </div>
+    `;
+}
 
-highlightsOutput.addEventListener('click', function(e){
-    nextSongAmount = 0;
-    if (e.target.classList.contains('highlighted__button--play') || 
-        e.target.closest('.highlighted__button--play') !== null) {
-                loadAudio(e);
-                handleNextSong(e);
-                console.log(e);
-    }
-})
 
-function defaultAudio() {
-    let song = songsList[3];
+// Load song in music bar
+function loadAudio(song) {
+    audioActive = false;
+    audioImg.src = `../assets/covers/${song.img}`;
+    audioTitle.textContent = song.title;
+    audioArtist.textContent = song.artist;
+    audioFile.src = song.audio;
+    handlePlayAudio();
+}
 
+function defaultAudio(songIndex) {
+    let song = songsList[songIndex];
     audioImg.src = `../assets/covers/${song.img}`;
     audioTitle.textContent = song.title;
     audioArtist.textContent = song.artist;
     audioFile.src = song.audio;
 }
 
-function loadAudio(event) {
-    const dataset = event.target.dataset.song;
-    let songIndex = parseInt(dataset);
-    if (nextSongAmount == 0) {
-        nextSongAmount = 0;
-    } else {
-        songIndex += nextSongAmount;
-    }
-
-    // } else if (prenext == 2){
-    //     songIndex = dataset -= 1;
-    // }
-
-    console.log(nextSongAmount);
-    let song = songsList[songIndex];
-    previousSongs.push(songIndex);
-
-    audioActive = false;
-
-    for (i = 0; i < songsList.length; i++) {
-        audioImg.src = `../assets/covers/${song.img}`;
-        audioTitle.textContent = song.title;
-        audioArtist.textContent = song.artist;
-        audioFile.src = song.audio;
-    }
-    handlePlayAudio();
-}
-
+// Start playing audio
 function handlePlayAudio() {
     if (audioActive) {
         handlePauseAudio();
-        return;
     } else {
         audioActive = true;
         audioPlay.innerHTML = '<i class="fas fa-pause"></i>';
@@ -397,50 +386,50 @@ function handlePlayAudio() {
     }
 }
 
+// Pause audio from music bar
 function handlePauseAudio() {
     audioActive = false;
     audioPlay.innerHTML = '<i class="fas fa-play"></i>';
     audioFile.pause();
 }
 
+// When song ends
 function handleAudioEnd() {
     audioTimeStampSlider.value = 0;
     audioActive = false;
     audioPlay.innerHTML = '<i class="fas fa-play"></i>';
 }
 
+// Current timestamp in the song
 function handleTimeStamp() {
     let seconds = parseInt(audioFile.currentTime % 60);
     let minute = parseInt((audioFile.currentTime / 60) % 60);
 
-    if (seconds < 10) {
+    if (seconds.toString().length == 1) {
         seconds = `0${seconds}`;
     }
-
     audioTime.textContent = `${minute}:${seconds}`;
 }
 
+// Duration of a song
 function handleDuration() {
     audioTimeStampSlider.max = audioFile.duration;
     audioTimeStampSlider.value = 0;
-
     let ds = parseInt(audioFile.duration % 60);
     let dm = parseInt((audioFile.duration / 60) % 60);
 
+    if (ds.toString().length == 1) {
+        ds = `0${ds}`;
+
+    }
     audioDuration.textContent = `${dm}:${ds}`;
 }
 
-function handleNextSong(currentSong){
-    audioNext.addEventListener('click', function() {
-        handleAudioEnd();
-        nextSongAmount += 1;
-        loadAudio(currentSong);
-    });
+// NOT WORKING YET - SOON
+function handleNextSong() {
+    alert('Coming Soon!');
 }
 
-function handlePreviousSong(currentSong){
-    audioPre.addEventListener('click', function() {
-        handleAudioEnd();
-        loadAudio(currentSong, 2);
-    });
+function handlePreviousSong() {
+    alert('Coming Soon!');
 }
