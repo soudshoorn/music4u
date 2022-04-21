@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -18,9 +20,8 @@ body {
     margin: 0 auto;
 }
 
-.purple-underline {
-    padding-bottom: 8px;
-    border-bottom: #7342d6 2px solid;
+a {
+    text-decoration: none;
 }
 
 /*
@@ -28,6 +29,10 @@ body {
 NAV
 
 */
+
+.navbar__item--icon2 {
+    margin-right: 8px;
+}
 
 nav {
     position: -webkit-sticky;
@@ -62,12 +67,12 @@ nav {
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
+    transition: all 300ms ease;
 }
 
 .navbar__links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 60vh;
 }
 
@@ -91,10 +96,17 @@ nav {
     display: flex;
     flex-direction: column;
     line-height: 24px;
+    text-align: left;
+}
+
+.navbar__links--link:hover {
+    color: #7342d6;
 }
 
 .navbar__item--icon {
+    text-align: left;
     font-size: 24px;
+    margin-right: 8px;
 }
 
 .navbar__item--href {
@@ -117,6 +129,7 @@ TOP TEN
     display: flex;
     flex-direction: row;
     margin: 10px 10px;
+    width: 10vw;
 }
 
 .topten__description {
@@ -247,7 +260,7 @@ EXPLORE
 }
 
 .explore__title {
-    margin: 32px;
+    margin: 32px 24px;
     margin-bottom: 0;
     align-self: start;
     color: white;
@@ -255,9 +268,34 @@ EXPLORE
     font-family: 'Akshar', sans-serif;
 }
 
+.explore__highlighted--songs {
+    display: flex;
+    flex-direction: column;
+}
+
 .explore__highlighted {
-    margin: 32px 16px;
     align-items: center;
+}
+
+.link__hover-effect:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.link__hover-effect{
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.link__hover-effect:after {
+    background-color: #7342d6;
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
 }
 
 .highlighted__title {
@@ -279,9 +317,14 @@ EXPLORE
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    width: 220px;
+    width: 18%;
     height: 270px;
     padding: 8px;  
+}
+
+.highlight-active {
+    padding-bottom: 8px;
+    border-bottom: #7342d6 2px solid;
 }
 
 .explore__title--wrapper {
@@ -310,9 +353,8 @@ EXPLORE
 .explore__output {
     margin-top: 24px;
     margin-bottom: 56px;
-    gap: 8px;
+    gap: 12px;
     width: 100%;
-    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -728,4 +770,112 @@ MEDIA QUERIES
     .navbar__logo--img {
         width: 90px;
     }
+}
+
+/*
+
+    GENRES
+
+*/
+
+.genres__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.genres__title {
+    display: flex;
+}
+
+.genres__title {
+    margin: 32px 24px;
+    margin-bottom: 0;
+    align-self: start;
+    color: white;
+    font-size: 78px;
+    font-family: 'Akshar', sans-serif;
+}
+
+.genres {
+    display: flex;
+    color: white;
+    align-items: start;
+    justify-content: center;
+    height: 85vh;
+    gap: 32px;
+    padding: 0 24px;
+    transition: all 400ms ease;
+}
+
+.genres__card {
+    margin: 32px 0;
+    cursor: pointer;
+    width: calc(100% / 3);
+    height: 80%;
+    background-color: red;
+    border-radius: 8px;
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.genres__card--hiphop {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.genres__card--hiphop:hover {
+    background-image: linear-gradient(63deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.genres__card--pop {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.genres__card--pop:hover {
+    background-image: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.genres__card--rb {
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.genres__card--rb:hover {
+    background-image: linear-gradient(82deg, #FBAB7E 0%, #F7CE68 100%);
+}
+
+.genres__description {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.genres__description--subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 128px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.genres__description--subtitle--hiphop {
+    background: -webkit-linear-gradient(43deg, #2443e0 0%, #d83ece 56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.genres__description--subtitle--pop {
+    background: -webkit-linear-gradient(90deg, #028ddd 0%, #71c0b7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.genres__description--subtitle--rb {
+    background: -webkit-linear-gradient(30deg, #ffa26c 0%, #ffcf57 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
