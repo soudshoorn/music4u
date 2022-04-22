@@ -77,3 +77,48 @@
                                 </a>
                             </div>
                         </ul> -->
+
+                        
+// Background Gradients
+const backgroundGradients = [
+    {
+        backgroundcolor: "#FF3CAC",
+        backgroundimg: " linear-gradient(225deg, #FF3CAC 0%, #2B86C5 100%)"
+    },
+    {
+        backgroundcolor: "#ff99bb",
+        backgroundimg: " radial-gradient(at 32% 36%, hsla(297,76%,65%,1) 0px, transparent 50%), radial-gradient(at 57% 67%, hsla(214,70%,75%,1) 0px, transparent 50%), radial-gradient(at 8% 70%, hsla(249,78%,78%,1) 0px, transparent 50%), radial-gradient(at 70% 51%, hsla(24,92%,71%,1) 0px, transparent 50%), radial-gradient(at 5% 65%, hsla(185,98%,62%,1) 0px, transparent 50%), radial-gradient(at 5% 35%, hsla(228,90%,75%,1) 0px, transparent 50%), radial-gradient(at 11% 1%, hsla(48,61%,66%,1) 0px, transparent 50%);"
+    },
+    {
+        backgroundcolor: "#21D4FD",
+        backgroundimg: " linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
+    },
+    {
+        backgroundcolor: "#0093E9",
+        backgroundimg: " linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
+    },
+    {
+        backgroundcolor: "#667eea",
+        backgroundimg: " linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    {
+        backgroundcolor: "#00c6fb",
+        backgroundimg: " linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
+    },
+    {
+        backgroundcolor: "#7028e4",
+        backgroundimg: " linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"
+    },
+    {
+        backgroundcolor: "#ff0844",
+        backgroundimg: " linear-gradient(to top, #ff0844 0%, #ffb199 100%)"
+    },
+    {
+        backgroundcolor: "#f83600",
+        backgroundimg: "linear-gradient(to right, #f83600 0%, #f9d423 100%)"
+    },
+    {
+        backgroundcolor: "#61616",
+        backgroundimg: "linear-gradient(-20deg, #616161 0%, #9bc5c3 100%)"
+    }
+];

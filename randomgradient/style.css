@@ -1,0 +1,18 @@
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    /* background-color:#ff99bb;
+    background-image:
+    radial-gradient(at 32% 36%, hsla(297,76%,65%,1) 0px, transparent 50%),
+    radial-gradient(at 57% 67%, hsla(214,70%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 8% 70%, hsla(249,78%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 70% 51%, hsla(24,92%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 5% 65%, hsla(185,98%,62%,1) 0px, transparent 50%),
+    radial-gradient(at 5% 35%, hsla(228,90%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 11% 1%, hsla(48,61%,66%,1) 0px, transparent 50%); */
+}

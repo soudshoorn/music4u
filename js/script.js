@@ -1,49 +1,5 @@
 console.log('script js loaded');
 
-// Background Gradients
-const backgroundGradients = [
-    {
-        backgroundcolor: "#FF3CAC",
-        backgroundimg: " linear-gradient(225deg, #FF3CAC 0%, #2B86C5 100%)"
-    },
-    {
-        backgroundcolor: "#FBDA61",
-        backgroundimg: " linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%)"
-    },
-    {
-        backgroundcolor: "#21D4FD",
-        backgroundimg: " linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)"
-    },
-    {
-        backgroundcolor: "#0093E9",
-        backgroundimg: " linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)"
-    },
-    {
-        backgroundcolor: "#667eea",
-        backgroundimg: " linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-    },
-    {
-        backgroundcolor: "#00c6fb",
-        backgroundimg: " linear-gradient(to top, #00c6fb 0%, #005bea 100%)"
-    },
-    {
-        backgroundcolor: "#7028e4",
-        backgroundimg: " linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"
-    },
-    {
-        backgroundcolor: "#ff0844",
-        backgroundimg: " linear-gradient(to top, #ff0844 0%, #ffb199 100%)"
-    },
-    {
-        backgroundcolor: "#f83600",
-        backgroundimg: "linear-gradient(to right, #f83600 0%, #f9d423 100%)"
-    },
-    {
-        backgroundcolor: "#61616",
-        backgroundimg: "linear-gradient(-20deg, #616161 0%, #9bc5c3 100%)"
-    }
-];
-
 // Songs 
 const songsList = [
     {
@@ -323,10 +279,37 @@ function handleTopTen() {
     }
 }
 
+
+//
+// RANDOM BACKGROUND
+//
+function handleRandomBackground(random) {
+    if (random === 'hslaColor') {
+        return Math.floor(Math.random() * 360);
+    } else if (random === 'percentage') {
+        return Math.floor(Math.random() * (80 - 60 + 1)) + 60;
+    } else if (random === 'percentage2'){
+        return Math.floor(Math.random() * 100);
+    } else if (random === 'percentage3'){
+        return Math.floor(Math.random() * (50 - 25 + 1)) + 50; // Amout of hue
+    }
+}
+
+function handleBackgroundHTML() {
+    return `background-color:hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage')}%,${handleRandomBackground('percentage3')}%,1);
+    background-image:
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%),
+    radial-gradient(at ${handleRandomBackground('percentage2')}% ${handleRandomBackground('percentage2')}%, hsla(${handleRandomBackground('hslaColor')},${handleRandomBackground('percentage3')}%,${handleRandomBackground('percentage')}%,1) 0px, transparent 50%);`
+}
+
 //
 // Highlighted
 //
-
 function handleLoadHighlights() {
     songsList.map((song) => {
         // Song card
@@ -336,10 +319,7 @@ function handleLoadHighlights() {
         highlightsOutput.appendChild(songDiv);
         songDiv.innerHTML = handleSongHTML(song);
         // backgrounds
-        let randomBackground = Math.floor(Math.random() * backgroundGradients.length);
-        let background = backgroundGradients[randomBackground];
-        songDiv.style.backgroundColor = `${background.backgroundcolor}`;
-        songDiv.style.backgroundImage = `${background.backgroundimg}`;
+        songDiv.style= `${handleBackgroundHTML()}`;
     }).join("");
 }
 
