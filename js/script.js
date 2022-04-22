@@ -415,6 +415,7 @@ function handleTimeStamp() {
 function handleDuration() {
     audioTimeStampSlider.max = audioFile.duration;
     audioTimeStampSlider.value = 0;
+    
     let ds = parseInt(audioFile.duration % 60);
     let dm = parseInt((audioFile.duration / 60) % 60);
 

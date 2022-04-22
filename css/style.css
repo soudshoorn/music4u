@@ -8,6 +8,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* animation: logospin 300ms infinite linear; */
 }
 
 body {
@@ -60,6 +61,20 @@ nav {
 .navbar__logo {
     display: flex;
     justify-content: space-around;
+}
+
+.navbar__logo:hover {
+    animation: logospin 300ms;
+}
+
+@keyframes logospin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .navbar__links--link {
@@ -665,15 +680,15 @@ MEDIA QUERIES
         z-index: 0;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         border-radius: 4px;
-        height: 200px;
-        width: 100px;
+        width: 45%;
+        height: 220px;
         padding: 8px;
         margin: 0;
     }
 
     .explore__output {
+        display: flex;
         justify-content: space-around;
         gap: 16px 8px;
     }
