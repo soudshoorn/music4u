@@ -14,7 +14,7 @@ body {
     background-color: #1c1d31;
 }
 
-.row{
+.row {
     width: 100%;
     max-width: 100vw;
     margin: 0 auto;
@@ -40,17 +40,17 @@ nav {
     float: left;
     width: 100%;
     max-width: 300px;
-    height: 100vh;  
-    z-index: 1; 
-    top: 0; 
+    height: 100vh;
+    z-index: 1;
+    top: 0;
     left: 0;
     border-right: #333446 2px solid;
-    overflow: hidden; 
+    overflow: hidden;
     padding-top: 30px;
 }
 
 .navbar {
-    height: 100%; 
+    height: 100%;
 }
 
 .navbar__logo--img {
@@ -150,7 +150,7 @@ TOP TEN
     color: #7342d6;
     text-align: center;
     display: block;
-    
+
     font-weight: bold;
     font-size: 18px;
 }
@@ -182,15 +182,15 @@ RIGHTBAR
     max-height: 100vh;
 }
 
-#rightbar{
+#rightbar {
     background-color: #1c1d31;
     position: -webkit-sticky;
     position: sticky;
-    top: 0; 
+    top: 0;
     border-right: #333446 2px solid;
 }
 
-.rightbar { 
+.rightbar {
     border-left: #333446 1px solid;
     float: right;
     display: flex;
@@ -230,12 +230,12 @@ INFO
     margin-right: 8px;
 }
 
-.rightbar__socials--items:hover .rightbar__socials--link{
+.rightbar__socials--items:hover .rightbar__socials--link {
     transition: all 300ms ease;
     color: #7342d6;
 }
 
-.rightbar__socials--items:hover .rightbar__socials--icon{
+.rightbar__socials--items:hover .rightbar__socials--icon {
     transition: all 300ms ease;
     color: #7342d6;
 }
@@ -251,7 +251,7 @@ EXPLORE
 
 */
 
-.explore{ 
+.explore {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
@@ -282,7 +282,7 @@ EXPLORE
     width: 100%;
 }
 
-.link__hover-effect{
+.link__hover-effect {
     padding-bottom: 8px;
     position: relative;
 }
@@ -317,9 +317,9 @@ EXPLORE
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    width: 18%;
+    width: 220px;
     height: 270px;
-    padding: 8px;  
+    padding: 8px;
 }
 
 .highlight-active {
@@ -331,7 +331,7 @@ EXPLORE
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
 }
 
 .topheader__icon--button {
@@ -355,6 +355,7 @@ EXPLORE
     margin-bottom: 56px;
     gap: 12px;
     width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -418,7 +419,7 @@ MUSIC BAR
 
 */
 
-.row-musicbar{
+.row-musicbar {
     position: fixed;
     z-index: 100;
     background-color: #333446;
@@ -426,14 +427,15 @@ MUSIC BAR
     height: 80px;
     width: 100%;
 }
-.musicbar{
+
+.musicbar {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100%;
 }
 
-.musicbar__description{
+.musicbar__description {
     color: white;
 }
 
@@ -506,7 +508,7 @@ MUSIC BAR
     color: #7a7b86;
 }
 
-.musicbar__volumecontrol ::-webkit-slider-runnable-track{
+.musicbar__volumecontrol ::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     height: 3px;
     border-radius: 8px;
@@ -514,7 +516,7 @@ MUSIC BAR
     border: none;
 }
 
-.musicbar__volumecontrol ::-webkit-slider-thumb{
+.musicbar__volumecontrol ::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     height: 14px;
@@ -524,7 +526,7 @@ MUSIC BAR
     margin-top: -4px;
 }
 
-.musicbar__timestamp ::-webkit-slider-runnable-track{
+.musicbar__timestamp ::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     height: 3px;
     border-radius: 8px;
@@ -532,7 +534,7 @@ MUSIC BAR
     border: none;
 }
 
-.musicbar__timestamp ::-webkit-slider-thumb{
+.musicbar__timestamp ::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     height: 14px;
@@ -542,7 +544,7 @@ MUSIC BAR
     margin-top: -4px;
 }
 
-.musicbar__volumecontrol ::-moz-range-track{
+.musicbar__volumecontrol ::-moz-range-track {
     -webkit-appearance: none;
     height: 3px;
     border-radius: 8px;
@@ -551,7 +553,7 @@ MUSIC BAR
     border: none;
 }
 
-.musicbar__volumecontrol ::-moz-range-thumb{
+.musicbar__volumecontrol ::-moz-range-thumb {
     -webkit-appearance: none;
     border: none;
     height: 14px;
@@ -561,7 +563,7 @@ MUSIC BAR
     margin-top: -4px;
 }
 
-.musicbar__timestamp ::-moz-range-track{
+.musicbar__timestamp ::-moz-range-track {
     -webkit-appearance: none;
     height: 3px;
     border-radius: 8px;
@@ -569,17 +571,17 @@ MUSIC BAR
     border: none;
 }
 
-.musicbar__timestamp ::-moz-range-progress{
+.musicbar__timestamp ::-moz-range-progress {
     background-color: white;
     height: 3px;
 }
 
-.musicbar__volumecontrol ::-moz-range-progress{
+.musicbar__volumecontrol ::-moz-range-progress {
     background-color: white;
     height: 3px;
 }
 
-.musicbar__timestamp ::-moz-range-thumb{
+.musicbar__timestamp ::-moz-range-thumb {
     -webkit-appearance: none;
     border: none;
     height: 14px;
@@ -589,7 +591,7 @@ MUSIC BAR
     margin-top: -4px;
 }
 
-input[type=range]{
+input[type=range] {
     -webkit-appearance: none;
     background: transparent;
 }
@@ -604,18 +606,21 @@ MEDIA QUERIES
 
 */
 
-@media (max-width:1200px){
+@media (max-width:1200px) {
     .musicbar__timestamp--slider {
         width: 30vw;
     }
+
     .musicbar__volumecontrol--slider {
         width: 6vw;
     }
+
     .musicbar__cover--img {
         border: 2px white solid;
         margin-bottom: 24px;
         width: 80px;
     }
+
     .btn__controller {
         width: 30px;
         height: 30px;
@@ -628,6 +633,7 @@ MEDIA QUERIES
         margin: 0 4px;
         font-size: 12px;
     }
+
     .musicbar__controller--pauseplay {
         width: 40px;
         height: 40px;
@@ -635,83 +641,100 @@ MEDIA QUERIES
     }
 }
 
-@media (max-width:728px){
-    .topheader__icon--button{
+@media (max-width:728px) {
+    .topheader__icon--button {
         display: block;
     }
+
     .explore__title {
         margin: 16px;
         margin-bottom: 0;
         align-self: start;
         font-size: 64px;
     }
+
     nav {
         display: none;
     }
-    .rightbar{
+
+    .rightbar {
         display: none;
     }
+
     .highlighted__song {
         z-index: 0;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         border-radius: 4px;
-        width: 45%;
         height: 200px;
-        padding: 8px;  
+        width: 100px;
+        padding: 8px;
         margin: 0;
     }
+
     .explore__output {
         justify-content: space-around;
         gap: 16px 8px;
     }
+
     .highlighted__description--title {
         font-size: 24px;
     }
+
     .highlighted__titles {
         display: flex;
         justify-content: start;
         margin: 0 0 24px 8px;
     }
+
     .musicbar__cover--img {
         border: 2px white solid;
         margin: 0 8px 36px 0;
         width: 80px;
     }
+
     .musicbar__description {
         width: 100%;
         max-width: 40%;
         font-size: 14px;
     }
-    .musicbar__volumecontrol{
+
+    .musicbar__volumecontrol {
         display: none;
     }
+
     .musicbar {
         margin: 0 8px;
     }
+
     .musicbar__timestamp {
         display: none;
     }
 }
 
 
-@media (max-width:400px){
+@media (max-width:400px) {
     .btn__controller {
         display: none;
     }
+
     .musicbar__controller--pauseplay {
         display: inline;
     }
+
     .musicbar__description {
         width: 100%;
         max-width: 100%;
         font-size: 15px;
     }
+
     .musicbar__cover--img {
         border: 2px white solid;
         margin: 0 8px 36px 0;
         width: 70px;
     }
+
     .musicbar {
         display: flex;
         justify-content: space-around;
@@ -722,7 +745,7 @@ MEDIA QUERIES
     .topten__description {
         font-size: 12px;
     }
-    
+
     .topten__position {
         width: 100%;
         max-width: 30px;
@@ -730,22 +753,27 @@ MEDIA QUERIES
         line-height: 30px;
         font-size: 14px;
     }
+
     .topten__description--para {
         font-size: 10px;
     }
+
     .rightbar__info {
         color: #6e7d8f;
         font-size: 12px;
         margin-bottom: 78px;
         margin-left: 16px;
     }
+
     .rightbar__socials--link {
         font-weight: 500;
         font-size: 12px;
     }
+
     .navbar__items {
         margin-top: 14px;
     }
+
     .navbar__item {
         margin: 20px 12px;
         color: #6e7d8f;
@@ -753,20 +781,25 @@ MEDIA QUERIES
         flex-direction: column;
         line-height: 20px;
     }
+
     .navbar__icons {
         justify-content: space-around;
         height: 60vh;
     }
+
     .navbar__item--icon {
         font-size: 20px;
     }
+
     .navbar__links {
         justify-content: space-around;
         height: 60vh;
     }
+
     .navbar__links--link {
         font-size: 18px;
     }
+
     .navbar__logo--img {
         width: 90px;
     }
