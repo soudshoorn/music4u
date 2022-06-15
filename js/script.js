@@ -27,11 +27,6 @@ const audioTimeStampSlider = document.querySelector('.musicbar__timestamp--slide
 const audioTime = document.querySelector('.musicbar__timestamp--currenttime');
 const audioDuration = document.querySelector('.musicbar__timestamp--fulltime');
 
-let nextSongAmount = 0;
-let previousSongs = [];
-let test1 = previousSongs[previousSongs.length - 2];
-let previousSong = songsList[test1];
-
 // TopTen Variables
 const topTenOutput = document.querySelector('.topten__output');
 
@@ -140,7 +135,7 @@ function handleSongHTML(song) {
 // Load song in music bar
 function loadAudio(song) {
     audioActive = false;
-    audioImg.src = `../assets/covers/${song.img}`;
+    audioImg.src = `/assets/covers/${song.img}`;
     audioTitle.textContent = song.title;
     audioArtist.textContent = song.artist;
     audioFile.src = song.audio;
@@ -149,7 +144,7 @@ function loadAudio(song) {
 
 function defaultAudio(songIndex) {
     let song = songsList[songIndex];
-    audioImg.src = `../assets/covers/${song.img}`;
+    audioImg.src = `/assets/covers/${song.img}`;
     audioTitle.textContent = song.title;
     audioArtist.textContent = song.artist;
     audioFile.src = song.audio;
@@ -206,7 +201,6 @@ function handleDuration() {
     audioDuration.textContent = `${dm}:${ds}`;
 }
 
-// NOT WORKING YET - SOON
 function handleNextSong() {
     const randomNext = Math.floor(Math.random() * songsList.length);
     loadAudio(songsList[randomNext]);
