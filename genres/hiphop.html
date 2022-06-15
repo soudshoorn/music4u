@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>    
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <nav>
@@ -16,15 +16,19 @@
             <div class="row-nav">
                 <div class="navbar">
                     <div class="navbar__logo">
-                        <a href="/"><img class="navbar__logo--img" src="/assets/img/logo.png" alt=""></a>
+                        <img class="navbar__logo--img" src="/assets/img/logo.png" alt="">
                     </div>  
                     <div class="navbar__items">
                         <ul class="navbar__links">
-                            <li class="navbar__item"><a href="/" class="navbar__links--link"><i class="fas fa-globe-americas navbar__item--icon"></i> Ontdek</a></li>
-                            <li class="navbar__item"><a href="/genres.html" class="navbar__links--link active"><i class="fas fa-music navbar__item--icon active"></i> Genres</a></li>
+                            <li class="navbar__item"><a href="/" class="navbar__links--link active"><i class="fas fa-globe-americas navbar__item--icon active"></i> Ontdek</a></li>
+                            <li class="navbar__item"><a href="/genres" class="navbar__links--link"><i class="fas fa-music navbar__item--icon"></i> Genres</a></li>
                             <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-compact-disc navbar__item--icon"></i> Artiesten</a></li>
-                            <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-podcast navbar__item--icon"></i> Radio</a></li>
                             <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-question navbar__item--icon"></i> FAQ</a></li>
+                            <!-- <div class="navbar__links--bottom">
+                                <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-hashtag navbar__item--icon"></i> Social Media</a></li>
+                                <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-address-card navbar__item--icon"></i> Over ons</a></li>
+                                <li class="navbar__item"><a href="" class="navbar__links--link"><i class="fas fa-mail-bulk navbar__item--icon"></i> Contact</a></li>
+                            </div> -->
                         </ul>
                     </div>
                 </div>
@@ -67,37 +71,32 @@
         Your browser does not support our music format.
     </audio>
 
-    <main class="genres__main">
-        <div class="genres__titles">
-            <h1 class="genres__title">Genres</h1>
-        </div>  
-        <section id="genres">
+    <main>
+
+        <section id="explore">
             <div class="container">
-                <div class="row row__genres">
-                    <div class="genres">
-                        <div class="genres__card genres__card--hiphop">
-                            <div class="genres__description">
-                                <h1 class="genres__description--title">Hip-Hop</h1>
-                                <h3 class="genres__description--subtitle genres__description--subtitle--hiphop">Hip-Hop</h3>
+                <div class="row">
+                    <div class="explore">
+                        <div class="explore__title--wrapper">
+                            <div class="topheader">
+                                <div class="topheader__icon">
+                                    <button class="topheader__icon--button"><i class="fas fa-bars"></i></button>
+                                </div>
                             </div>
                         </div>
-                        <div class="genres__card genres__card--pop">
-                            <div class="genres__description">
-                                <h1 class="genres__description--title">Pop</h1>
-                                <h3 class="genres__description--subtitle genres__description--subtitle--pop">Pop</h3>
+                        <div class="explore__highlighted">
+                            <div class="explore__highlighted--songs">
+                                <h1 class="explore__title">Hip-Hop</h1>
+                                <div class="explore__output">
+                                <!-- OUTPUT -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="genres__card genres__card--rb">
-                            <div class="genres__description">
-                                <h1 class="genres__description--title">R&B</h1>
-                                <h3 class="genres__description--subtitle genres__description--subtitle--rb">R&B</h3>
-                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="./js/genres.js"></script>
+    <script type="module" src="../js/genres.js"></script>
 </body>
 </html>
